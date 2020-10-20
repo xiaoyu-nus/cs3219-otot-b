@@ -1,5 +1,5 @@
 // Import anime model
-Anime = require('./animeModel');
+import Anime from './animeModel';
 // Handle index actions
 exports.index = function (req, res) {
     Anime.get(function (err, animes) {
@@ -25,7 +25,12 @@ exports.new = function (req, res) {
     anime.production = req.body.production;
 // save the anime and check for errors
     anime.save(function (err) {
-
+            if (err) {
+            res.json({
+                status: "error",
+                message: err,
+            });
+        }
 res.json({
             message: 'New anime created!',
             data: anime
