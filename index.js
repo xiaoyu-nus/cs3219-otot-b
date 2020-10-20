@@ -6,6 +6,7 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 // Initialise the app
 let app = express();
+const serverless = require('serverless-http');
 
 // Import routes
 let apiRoutes = require("./api-routes");
@@ -37,4 +38,5 @@ app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
 
-module.exports = app.listen(3000)
+// module.exports = app.listen(3000)
+module.exports.handler = serverless(app);

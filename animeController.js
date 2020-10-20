@@ -1,13 +1,10 @@
 // Import anime model
-import Anime from './animeModel';
+Anime = require('./animeModel');
 // Handle index actions
 exports.index = function (req, res) {
     Anime.get(function (err, animes) {
         if (err) {
-            res.json({
-                status: "error",
-                message: err,
-            });
+            return res.status(404).send(err);
         }
         res.json({
             status: "success",
@@ -26,14 +23,12 @@ exports.new = function (req, res) {
 // save the anime and check for errors
     anime.save(function (err) {
             if (err) {
-            res.json({
-                status: "error",
-                message: err,
-            });
+                return res.status(400).send(err);
+
         }
-res.json({
+    res.status(201).json({
             message: 'New anime created!',
-            data: anime
+            data: anime,
         });
     });
 };
@@ -41,7 +36,7 @@ res.json({
 exports.view = function (req, res) {
     Anime.findById(req.params.anime_id, function (err, anime) {
         if (err)
-            res.send(err);
+            return res.status(404).send(err);
         res.json({
             message: 'Anime details loading..',
             data: anime
@@ -52,7 +47,7 @@ exports.view = function (req, res) {
 exports.update = function (req, res) {
 Anime.findById(req.params.anime_id, function (err, anime) {
         if (err)
-            res.send(err);
+        return res.status(404).send(err);
 anime.name = req.body.name ? req.body.name : anime.name;
         anime.director = req.body.director;
         anime.year = req.body.year;
@@ -60,7 +55,7 @@ anime.name = req.body.name ? req.body.name : anime.name;
 // save the anime and check for errors
         anime.save(function (err) {
             if (err)
-                res.json(err);
+            return res.status(404).send(err);
             res.json({
                 message: 'Anime Info updated',
                 data: anime
@@ -74,7 +69,7 @@ exports.delete = function (req, res) {
         _id: req.params.anime_id
     }, function (err, anime) {
         if (err)
-            res.send(err);
+        res.json(err);
 res.json({
             status: "success",
             message: 'Anime deleted'
