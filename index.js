@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-// mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 
-const db = require("./keys").mongoURI;
+// const db = require("./keys").mongoURI;
 
-mongoose
-  .connect(db, { useNewUrlParser: true, useCreateIndex: true })
-  .then(() => console.log("mongodb connected"))
-  .catch((err) => console.log(err));
+// mongoose
+//   .connect(db, { useNewUrlParser: true, useCreateIndex: true })
+//   .then(() => console.log("mongodb connected"))
+//   .catch((err) => console.log(err));
 
 // Setup server port
 var port = process.env.PORT || 8080;
@@ -40,5 +40,5 @@ app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
 
-// module.exports = app.listen(3000)
+module.exports = app.listen(3000, () => console.log("API listening to port 3000"));
 module.exports.handler = serverless(app);
