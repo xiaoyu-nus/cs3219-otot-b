@@ -160,7 +160,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/restapi/dev/1603220324829-2020-10-20T18:58:44.829Z/restapi.zip"
+                "S3Key": "serverless/restapi/dev/1604599029590-2020-11-05T17:57:09.590Z/restapi.zip"
               },
               "FunctionName": "restapi-dev-app",
               "Handler": "index.handler",
@@ -178,14 +178,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionzvqlq1qXzq6cJkoIKA9FaGTseXL5HlZzsDjVRiV7Fg": {
+          "AppLambdaVersionREzF7ekwAH9Ixt78xUJNulKCZCGwwFdPMDDD4I3ydXQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "9O6O0Ogw74/5hbro0TFOA0U0lSxUJjTJyiyeWUa3/kU="
+              "CodeSha256": "wNE2o4KKrcXpQhSynpS1xK558POrLpOIa1vF52vA/oY="
             }
           },
           "ApiGatewayRestApi": {
@@ -397,7 +397,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1603220320950": {
+          "ApiGatewayDeployment1604599017173": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -459,7 +459,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionzvqlq1qXzq6cJkoIKA9FaGTseXL5HlZzsDjVRiV7Fg"
+              "Ref": "AppLambdaVersionREzF7ekwAH9Ixt78xUJNulKCZCGwwFdPMDDD4I3ydXQ"
             }
           },
           "ServiceEndpoint": {
@@ -620,7 +620,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionzvqlq1qXzq6cJkoIKA9FaGTseXL5HlZzsDjVRiV7Fg"
+        "versionLogicalId": "AppLambdaVersionREzF7ekwAH9Ixt78xUJNulKCZCGwwFdPMDDD4I3ydXQ"
       }
     },
     "configValidationMode": "warn",
@@ -643,7 +643,7 @@
     "artifact": "C:\\Users\\tkgsl\\OneDrive\\Desktop\\folders\\schoolwork\\Y3S1\\CS3219\\OTOT\\B\\cs3219-otot-b\\.serverless\\restapi.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/restapi/dev/1603220324829-2020-10-20T18:58:44.829Z",
+    "artifactDirectoryName": "serverless/restapi/dev/1604599029590-2020-11-05T17:57:09.590Z",
     "artifact": "restapi.zip"
   }
 }
