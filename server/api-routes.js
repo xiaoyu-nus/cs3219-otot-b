@@ -1,7 +1,7 @@
 // Initialize express router
 let router = require('express').Router();
 // Set default API response
-router.get('/', function (req, res) {
+router.get('/', async function (req, res) {
     res.json({
         status: 'API Working',
         message: 'Welcome',
