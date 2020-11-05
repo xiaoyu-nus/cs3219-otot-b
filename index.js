@@ -10,20 +10,22 @@ const serverless = require('serverless-http');
 
 // Import routes
 let apiRoutes = require("./api-routes");
+
+
 // Configure bodyparser to handle post requests
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
-var db = mongoose.connection;
+// mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 
-// Added check for DB connection
-if(!db)
-    console.log("Error connecting db")
-else
-    console.log("Db connected successfully")
+const db = require("./keys").mongoURI;
+
+mongoose
+  .connect(db, { useNewUrlParser: true, useCreateIndex: true })
+  .then(() => console.log("mongodb connected"))
+  .catch((err) => console.log(err));
 
 // Setup server port
 var port = process.env.PORT || 8080;
