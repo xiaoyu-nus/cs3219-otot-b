@@ -23,6 +23,9 @@ App is running on http://localhost:8080
 ## Deploy
 
 I have integrated the frontend and tried with serverless framework but this is currently not working as expected.
+
+https://jgn73t7djb.execute-api.us-east-1.amazonaws.com/dev
+
 From root folder:
 
 ```
