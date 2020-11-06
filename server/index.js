@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 const env = process.env.NODE_ENV || 'development';
 
-if(env === 'development'){
+if(env === 'development' || 'test'){
     process.env.MONGODB_URI = 'mongodb://localhost/resthub'
   } else {
     process.env.MONGODB_URI = require("./keys").mongoURI;
