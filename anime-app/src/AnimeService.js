@@ -26,7 +26,7 @@ class AnimeService {
             year,
             production,
             director
-        });
+        }).catch((err) => console.log(err.response));
     }
 
     // DELETE

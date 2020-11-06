@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/restapi/dev/1604654381911-2020-11-06T09:19:41.911Z/restapi.zip"
+          "S3Key": "serverless/restapi/dev/1604656836718-2020-11-06T10:00:36.718Z/restapi.zip"
         },
         "FunctionName": "restapi-dev-app",
         "Handler": "./server/index.handler",
@@ -164,14 +164,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersiongEYMxO2UuRTA9nGPzmQHaozz5eRvwtIc7eQgmHlXPw": {
+    "AppLambdaVersionNBavOXYzBR92m30wdIK3X1Y9gtFStphf51z0upDkEM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "oM8lz0emXXfeeNdINI6efRGRbOpQYTsFzwqfFUH5UOY="
+        "CodeSha256": "K04+8Hq7NsN6artAdO1kdLHMqLMxuGUtVszrDTkjt64="
       }
     },
     "ApiGatewayRestApi": {
@@ -383,7 +383,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1604654339410": {
+    "ApiGatewayDeployment1604656791944": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -445,7 +445,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersiongEYMxO2UuRTA9nGPzmQHaozz5eRvwtIc7eQgmHlXPw"
+        "Ref": "AppLambdaVersionNBavOXYzBR92m30wdIK3X1Y9gtFStphf51z0upDkEM"
       }
     },
     "ServiceEndpoint": {

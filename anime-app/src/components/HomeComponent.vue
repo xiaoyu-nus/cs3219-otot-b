@@ -7,7 +7,8 @@
       <input type="text" id="create-anime-year" v-model="year" placeholder="Year of production">
       <input type="text" id="create-anime-pro" v-model="production" placeholder="Produced by">
       <input type="text" id="create-anime-dir" v-model="director" placeholder="Director"><br>
-      <button class="button" v-on:click="createAnime">Add</button>
+      <button class="button" v-on:click="createAnime">Add</button><br>
+      <label for="create-anime"> Double click to delete an anime </label><br>
     </div>
     <hr>
     <p class="error" v-if="error">{{error}}</p>
