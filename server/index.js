@@ -6,6 +6,7 @@ let bodyParser = require('body-parser');
 let cors = require('cors');
 // Import Mongoose
 let mongoose = require('mongoose');
+
 // Initialise the app
 let app = express();
 const serverless = require('serverless-http');
@@ -21,17 +22,26 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 
-// const db = require("./keys").mongoURI;
 
-// mongoose
-//   .connect(db, { useNewUrlParser: true, useCreateIndex: true })
-//   .then(() => console.log("mongodb connected"))
-//   .catch((err) => console.log(err));
+const env = process.env.NODE_ENV || 'development';
+
+if(env === 'test'){
+    process.env.MONGODB_URI = 'mongodb://localhost/resthub'
+  } else {
+    process.env.MONGODB_URI = require("./keys").mongoURI;
+  }
+
+
+mongoose
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true })
+  .then(() => console.log("mongodb connected"))
+  .catch((err) => console.log(err));
 
 // Setup server port
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 6000;
+
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with Express'));

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/animes/';
+const url = 'http://localhost:6000/api/animes/';
 
 class AnimeService {
     // GET

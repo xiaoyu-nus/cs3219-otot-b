@@ -160,10 +160,10 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/restapi/dev/1604599029590-2020-11-05T17:57:09.590Z/restapi.zip"
+                "S3Key": "serverless/restapi/dev/1604648284201-2020-11-06T07:38:04.201Z/restapi.zip"
               },
               "FunctionName": "restapi-dev-app",
-              "Handler": "index.handler",
+              "Handler": "./server/index.handler",
               "MemorySize": 128,
               "Role": {
                 "Fn::GetAtt": [
@@ -178,14 +178,14 @@
               "AppLogGroup"
             ]
           },
-          "AppLambdaVersionREzF7ekwAH9Ixt78xUJNulKCZCGwwFdPMDDD4I3ydXQ": {
+          "AppLambdaVersion3W6h9jCrF7vRKXpxO0W9yBZQofd85Bwa2AnlJroPvA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "wNE2o4KKrcXpQhSynpS1xK558POrLpOIa1vF52vA/oY="
+              "CodeSha256": "xTSlk9KvL0ilto8KfrqhaJf2sO6tgBg90XIXWjJliT8="
             }
           },
           "ApiGatewayRestApi": {
@@ -397,7 +397,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1604599017173": {
+          "ApiGatewayDeployment1604648224685": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -459,7 +459,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionREzF7ekwAH9Ixt78xUJNulKCZCGwwFdPMDDD4I3ydXQ"
+              "Ref": "AppLambdaVersion3W6h9jCrF7vRKXpxO0W9yBZQofd85Bwa2AnlJroPvA"
             }
           },
           "ServiceEndpoint": {
@@ -559,7 +559,7 @@
     "pluginsData": {},
     "functions": {
       "app": {
-        "handler": "index.handler",
+        "handler": "./server/index.handler",
         "events": [
           {
             "http": {
@@ -620,7 +620,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AppLambdaVersionREzF7ekwAH9Ixt78xUJNulKCZCGwwFdPMDDD4I3ydXQ"
+        "versionLogicalId": "AppLambdaVersion3W6h9jCrF7vRKXpxO0W9yBZQofd85Bwa2AnlJroPvA"
       }
     },
     "configValidationMode": "warn",
@@ -643,7 +643,7 @@
     "artifact": "C:\\Users\\tkgsl\\OneDrive\\Desktop\\folders\\schoolwork\\Y3S1\\CS3219\\OTOT\\B\\cs3219-otot-b\\.serverless\\restapi.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/restapi/dev/1604599029590-2020-11-05T17:57:09.590Z",
+    "artifactDirectoryName": "serverless/restapi/dev/1604648284201-2020-11-06T07:38:04.201Z",
     "artifact": "restapi.zip"
   }
 }
