@@ -1,6 +1,13 @@
 language: node_js
 node_js: 12.18.2
 
+services:
+  - mongodb
+
+before_script:
+  - sleep 15
+  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
+
 install:
   - npm ci
 

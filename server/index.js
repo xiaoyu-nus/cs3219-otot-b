@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 const env = process.env.NODE_ENV || 'development';
 
-if(env === 'test' || env === 'development'){
+if(env === 'development'){
     process.env.MONGODB_URI = 'mongodb://localhost/resthub'
   } else {
     process.env.MONGODB_URI = require("./keys").mongoURI;
@@ -42,9 +42,7 @@ mongoose
 // Setup server port
 var port = process.env.PORT || 5000;
 
-
-// Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'));
+console.log("========================" + env);
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
@@ -56,6 +54,11 @@ if (process.env.NODE_ENV === 'production') {
 
   app.get(/.*/, (req,res) => res.sendFile(__dirname + '/public/index.html'));
 }
+
+
+// Send message for default URL
+app.get('/', (req, res) => res.send('Hello World with Express'));
+
 
 // Launch app to listen to specified port
 app.listen(port, function () {
